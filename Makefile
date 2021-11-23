@@ -1,19 +1,7 @@
-/* ************************************************************************** */
-/* ************************************************************************** */
-/* **                                                                      ** */
-/* **     ███    ███  █████  ██   ██ ███████ ███████ ██ ██      ███████    ** */
-/* **     ████  ████ ██   ██ ██  ██  ██      ██      ██ ██      ██         ** */
-/* **     ██ ████ ██ ███████ █████   █████   █████   ██ ██      █████      ** */
-/* **     ██  ██  ██ ██   ██ ██  ██  ██      ██      ██ ██      ██         ** */
-/* **     ██      ██ ██   ██ ██   ██ ███████ ██      ██ ███████ ███████    ** */
-/* **                                                                      ** */
-/* ************************************************************************** */
-/* ************************************************************************** */
-
 
 CC := gcc
 FLAGS := -Wall -Wextra -Werror
-BUFF_SZ := -D BUFFER_SIZE=100
+BUFF_SZ := -D BUFFER_SIZE=42
 
 H_FILE := get_next_line.h
 NAME := libgnl.a
@@ -25,13 +13,16 @@ OBJ := $(SRC:%.c=%.o)
 all: $(NAME)
 
 compile: all main.c
-	$(CC) $(FLAGS) $(BUFF_SZ) -L. -lgnl
+	@echo "Compiling 'main.c' ...\n"
+	@$(CC) $(FLAGS) $(BUFF_SZ) -L. -lgnl main.c
 
 $(NAME): $(OBJ) $(H_FILE)
-	ar rcs $(NAME) $(OBJ)
+	@echo "Making archive file '$(NAME)' ...\n"
+	@ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
-	$(CC) $(FLAGS) -o $@ -c $<
+	@echo "Making Object file from $< ...\n"
+	@$(CC) $(FLAGS) $(BUFF_SZ) -o $@ -c $<
 
 clean:
 	@echo "Cleaning Object Files ...\n"
@@ -42,3 +33,5 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+
