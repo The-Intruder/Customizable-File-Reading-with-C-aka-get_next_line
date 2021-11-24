@@ -1,37 +1,47 @@
-//#include <stdio.h>
-//#include <string.h>
-//#include <stdlib.h>
-//#include <fcntl.h>
-//#include <unistd.h>
+/* ************************************************************************** */
+/* ************************************************************************** */
+/* **                                                                      ** */
+/* **              ███    ███  █████  ██ ███    ██     ██████              ** */
+/* **              ████  ████ ██   ██ ██ ████   ██    ██                   ** */
+/* **              ██ ████ ██ ███████ ██ ██ ██  ██    ██                   ** */
+/* **              ██  ██  ██ ██   ██ ██ ██  ██ ██    ██                   ** */
+/* **              ██      ██ ██   ██ ██ ██   ████ ██  ██████              ** */
+/* **                                                                      ** */
+/* ************************************************************************** */
+/* ************************************************************************** */
 #include "get_next_line.h"
 
-static int	print_error_message(char *s)
+int main(void)
 {
-	write(2, s, strlen(s));
-	return(0);
-}
+	int		fd1;
+	int		fd2;
+	int		fd3;
+	char	*output;
 
-int main()
-{
-	int		fd;
-	char	*buf;
-	//int		read_bytes;
-
-	buf = (char *)ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-	fd = open("file.txt", O_RDONLY);
-	if (fd < 0)
+	fd1 = open("./lorem.txt", O_RDONLY);
+	fd2 = open("./kafka.txt", O_RDONLY);
+	fd3 = open("./cicero.txt", O_RDONLY);
+	if (fd1 < 0 || fd2 < 0 || fd3 < 0)
 		return (print_error_message("Error while opening file ...\n"));
-	/*
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 15; i++)
 	{
-		read_bytes = read(fd, buf, BUFFER_SIZE);
-		if (read_bytes < 0)
-			return (print_error_message("Error while reading file ...\n"));
-		else if (read_bytes == 0)
-			return (print_error_message("`read()' function reached EOF ...\n"));
-		printf("%s", buf);
+		output = get_next_line(fd1);
+		if (output)
+			printf("%s", output);
+		free(output);
+		printf("Checkpoint 1\n");
+
+		output = get_next_line(fd2);
+		if (output)
+			printf("%s", output);
+		free(output);
+		printf("Checkpoint 2\n");
+		
+		output = get_next_line(fd3);
+		if (output)
+			printf("%s", output);
+		free(output);
+		printf("Checkpoint 3\n");
 	}
-	*/
-	printf("%s", get_next_line(fd));
 	return (0);
 }

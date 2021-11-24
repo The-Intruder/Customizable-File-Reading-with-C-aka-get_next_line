@@ -6,10 +6,9 @@
 /*   By: mnaimi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:59:57 by mnaimi            #+#    #+#             */
-/*   Updated: 2021/11/23 22:57:45 by mnaimi           ###   ########.fr       */
+/*   Updated: 2021/11/24 17:16:48 by mnaimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "get_next_line.h"
 
 /* -------------------------------------------------------------------------- */
@@ -26,27 +25,17 @@ size_t	ft_strlen(const char *s)
 
 /* -------------------------------------------------------------------------- */
 
-void	ft_bzero(void *s, size_t n)
-{
-	size_t	i;
-	char	*myptr;
-
-	i = 0;
-	myptr = (char *)s;
-	while (i++ < n)
-		*(myptr++) = 0;
-}
-
-/* -------------------------------------------------------------------------- */
-
 void	*ft_calloc(size_t count, size_t size)
 {
 	char	*ptr;
+	size_t	i;
 
 	ptr = (char *) malloc(count * size);
 	if (ptr == NULL)
 		return (NULL);
-	ft_bzero(ptr, count * size);
+	i = 0;
+	while (i < count * size)
+		ptr[i++] = 0;
 	return ((void *) ptr);
 }
 
@@ -134,7 +123,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	while (s2[i])
 		output_str[output_i++] = s2[i++];
-	//output_str[output_i] = '\0';
 	return (output_str);
 }
 
