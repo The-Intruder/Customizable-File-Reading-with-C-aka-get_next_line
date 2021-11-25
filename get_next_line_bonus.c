@@ -1,15 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnaimi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 15:59:35 by mnaimi            #+#    #+#             */
-/*   Updated: 2021/11/25 21:31:25 by mnaimi           ###   ########.fr       */
+/*   Created: 2021/11/25 21:35:34 by mnaimi            #+#    #+#             */
+/*   Updated: 2021/11/25 21:47:51 by mnaimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 /* -------------------------------------------------------------------------- */
 
@@ -91,7 +91,7 @@ char	*get_next_line(int fd)
 		free(dummy_ptr);
 		ft_bzero(buf, BUFFER_SIZE + 1);
 	}
-	if (ft_strchr(temp, '\n') && ft_strchr(temp, '\n') + 1)
+	if (ft_strchr(temp, '\n') && (ft_strchr(temp, '\n') + 1))
 	{
 		the_rest = strdup(ft_strchr(temp, '\n') + 1);
 		dummy_ptr = temp;

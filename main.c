@@ -18,12 +18,12 @@ int main(void)
 	//int		fd3;
 	char	*output;
 
-	fd1 = open("./43_with_nl", O_RDONLY);
+	fd1 = open("./txt_files/lorem.txt", O_RDONLY);
 	//fd2 = open("./kafka.txt", O_RDONLY);
 	//fd3 = open("./cicero.txt", O_RDONLY);
 	if (fd1 < 0)
 		return (printf("Error while opening file ...\n"));
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 100; i++)
 	{
 		output = get_next_line(fd1);
 		if (output)

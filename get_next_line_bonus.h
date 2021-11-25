@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnaimi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 15:59:44 by mnaimi            #+#    #+#             */
-/*   Updated: 2021/11/25 19:35:20 by mnaimi           ###   ########.fr       */
+/*   Created: 2021/11/25 21:36:11 by mnaimi            #+#    #+#             */
+/*   Updated: 2021/11/25 21:36:26 by mnaimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 /*  Testing Phase Includes  */
 /* ------- WARNING -------- */
