@@ -6,7 +6,7 @@
 /*   By: mnaimi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:35:47 by mnaimi            #+#    #+#             */
-/*   Updated: 2021/11/26 19:13:21 by mnaimi           ###   ########.fr       */
+/*   Updated: 2021/11/26 20:37:52 by mnaimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line_bonus.h"
@@ -75,52 +75,34 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 /* -------------------------------------------------------------------------- */
 
-t_list	*ft_lstnew(int fd)
+size_t	ft_strlen(const char *s)
 {
-	t_list	*ptr;
+	size_t	i;
 
-	ptr = (t_list *)malloc(sizeof(t_list));
-	if (!ptr)
-		return (NULL);
-	ptr -> node_fd = fd;
-	ptr -> the_rest = 0;
-	ptr -> next = NULL;
-	return (ptr);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
 /* -------------------------------------------------------------------------- */
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+char	*ft_strchr(const char *s, int c)
 {
-	t_list	*ptr;
+	size_t	i;
+	char	my_c;
 
-	if (new == NULL || lst == NULL)
-		return ;
-	if (*lst == NULL)
-		*lst = new;
-	else
+	i = 0;
+	my_c = (char) c;
+	while (s[i])
 	{
-		ptr = ft_lstlast(*lst);
-		ptr->next = new;
+		if (s[i] == my_c)
+			return ((char *)&s[i]);
+		i++;
 	}
-}
-
-/* -------------------------------------------------------------------------- */
-
-void	ft_lstclear(t_list **lst)
-{
-	t_list	*ptr;
-
-	if (!*lst || !lst)
-		return ;
-	while (*lst)
-	{
-		ptr = *lst;
-		free((*lst)-> the_rest);
-		(*lst) = (*lst) -> next;
-		free(ptr);
-	}
-	*lst = NULL;
+	if (my_c == 0 && s[i] == my_c)
+		return ((char *)&s[i]);
+	return (0);
 }
 
 /* -------------------------------------------------------------------------- */
