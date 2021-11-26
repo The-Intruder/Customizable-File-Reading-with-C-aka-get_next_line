@@ -6,7 +6,7 @@
 /*   By: mnaimi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:35:47 by mnaimi            #+#    #+#             */
-/*   Updated: 2021/11/26 17:47:02 by mnaimi           ###   ########.fr       */
+/*   Updated: 2021/11/26 19:13:21 by mnaimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line_bonus.h"
@@ -75,14 +75,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 /* -------------------------------------------------------------------------- */
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int fd)
 {
 	t_list	*ptr;
 
 	ptr = (t_list *)malloc(sizeof(t_list));
 	if (!ptr)
 		return (NULL);
-	ptr -> content = content;
+	ptr -> node_fd = fd;
+	ptr -> the_rest = 0;
 	ptr -> next = NULL;
 	return (ptr);
 }

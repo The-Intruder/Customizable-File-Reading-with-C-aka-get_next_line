@@ -6,7 +6,7 @@
 /*   By: mnaimi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:35:34 by mnaimi            #+#    #+#             */
-/*   Updated: 2021/11/26 17:47:04 by mnaimi           ###   ########.fr       */
+/*   Updated: 2021/11/26 19:13:24 by mnaimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line_bonus.h"
@@ -44,21 +44,7 @@ char	*ft_strchr(const char *s, int c)
 }
 
 /* -------------------------------------------------------------------------- */
-
-void	ft_bzero(void *s, size_t n)
-{
-	size_t	i;
-	char	*myptr;
-
-	i = 0;
-	myptr = (char *)s;
-	while (i++ < n)
-		*(myptr++) = 0;
-}
-
-/* -------------------------------------------------------------------------- */
 /*
-
    //free the static variable in case allocation fails in buf or temp,
    //but bear in mind that static will be wiped and future function calling
    //(in case of memory being freed for te allocation to succedd) 
@@ -155,7 +141,7 @@ char	*get_next_line(int fd)
 	}
 	selected_node = get_node(fd, &fd_list);
 	if (!selected_node)
-		ptr_to_node = ft_lstnew()
+		ptr_to_node = ft_lstnew(fd)
 	buf = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buf)
 		return (NULL);
