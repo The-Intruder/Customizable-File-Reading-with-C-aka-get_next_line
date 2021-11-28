@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 #include "get_next_line_bonus.h"
 
-/* -------------------------------------------------------------------------- */
-
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
@@ -23,8 +21,6 @@ void	ft_bzero(void *s, size_t n)
 	while (i++ < n)
 		*(myptr++) = 0;
 }
-
-/* -------------------------------------------------------------------------- */
 
 char	*ft_strdup(const char *src)
 {
@@ -45,8 +41,6 @@ char	*ft_strdup(const char *src)
 	}
 	return (dest);
 }
-
-/* -------------------------------------------------------------------------- */
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -73,8 +67,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (output_str);
 }
 
-/* -------------------------------------------------------------------------- */
-
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
@@ -84,8 +76,6 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
-/* -------------------------------------------------------------------------- */
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -104,5 +94,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (0);
 }
-
-/* -------------------------------------------------------------------------- */
