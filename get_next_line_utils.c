@@ -6,10 +6,12 @@
 /*   By: mnaimi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:59:57 by mnaimi            #+#    #+#             */
-/*   Updated: 2021/11/26 20:36:42 by mnaimi           ###   ########.fr       */
+/*   Updated: 2021/11/28 21:34:25 by mnaimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
+
+/* -------------------------------------------------------------------------- */
 
 size_t	ft_strlen(const char *s)
 {
@@ -21,6 +23,8 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
+/* -------------------------------------------------------------------------- */
+
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
@@ -31,6 +35,8 @@ void	ft_bzero(void *s, size_t n)
 	while (i++ < n)
 		*(myptr++) = 0;
 }
+
+/* -------------------------------------------------------------------------- */
 
 char	*ft_strdup(const char *src)
 {
@@ -51,6 +57,8 @@ char	*ft_strdup(const char *src)
 	}
 	return (dest);
 }
+
+/* -------------------------------------------------------------------------- */
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -77,6 +85,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (output_str);
 }
 
+/* -------------------------------------------------------------------------- */
+
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
@@ -94,3 +104,5 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (0);
 }
+
+/* -------------------------------------------------------------------------- */

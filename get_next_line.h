@@ -6,7 +6,7 @@
 /*   By: mnaimi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:59:44 by mnaimi            #+#    #+#             */
-/*   Updated: 2021/11/26 20:35:10 by mnaimi           ###   ########.fr       */
+/*   Updated: 2021/11/28 21:48:00 by mnaimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *s);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strdup(const char *src);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif
