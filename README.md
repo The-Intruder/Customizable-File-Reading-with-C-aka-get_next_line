@@ -97,7 +97,7 @@ To get started with the Get Next Line project, follow the steps below:
    - Change the current working directory to the location where you want to clone the repository.
    - Run the following command:
      ```
-     git clone <repository-url>
+     git clone https://github.com/The-Intruder/Customizable-File-Reading-with-C-aka-get_next_line get_next_line
      ```
    - This will create a local copy of the Get Next Line project on your machine.
 
@@ -130,24 +130,24 @@ To use the Get Next Line function in your project, follow these steps:
 2. Call the Get Next Line Function:
    - To read the next line from a file descriptor, use the following function call:
      ```
-     int get_next_line(int fd, char **line);
+     char *get_next_line(int fd);
      ```
    - Pass the file descriptor `fd` from which you want to read the next line.
-   - The function will store the line read from the file descriptor in the `line` variable, which is a pointer to a character pointer (`char**`).
-   - The function returns `1` if a line was read successfully, `0` if the end of the file was reached, or `-1` in case of an error.
+   - The function will return the line read from the file descriptor, which is a pointer to a character (`char*`).
+   - The function returns a pointer to a character if a line was read successfully, `NULL` if the end of the file was reached or in case of an error.
 
 3. Process the Read Line:
    - After calling the Get Next Line function, you can process the read line as needed in your project.
-   - The line read from the file descriptor is stored in the `line` variable passed to the function call.
-   - You can manipulate and use the `line` variable to perform operations such as printing, parsing, or further processing.
+   - The line read from the file descriptor is returned function call.
+   - You can manipulate and use the returned pointer to perform operations such as printing, parsing, or further processing.
 
 4. Free Allocated Memory:
    - It's important to free the memory allocated by the Get Next Line function to avoid memory leaks.
    - After you have finished using the line read from the file descriptor, free the memory using the following function call:
      ```
-     void ft_strdel(char **as);
+     void free(void *addr);
      ```
-   - Pass the address of the `line` variable to the `ft_strdel` function to free the memory.
+   - Pass the address of the returned value to the `free` function to free the memory.
 
 5. Repeat the Process:
    - To read the next line from the file descriptor, repeat steps 2-4.
@@ -198,8 +198,7 @@ Here is a roadmap that outlines the steps to take in order to enhance and expand
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 * If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/The-Intruder/Customizable-File-Reading-with-C-aka-get_next_line/issues/new) to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
 * Please make sure you check your spelling and grammar.
-* Create individual PR for each suggestion.
-* Please also read through the [Code Of Conduct](https://github.com/The-Intruder/Customizable-File-Reading-with-C-aka-get_next_line/blob/main/CODE_OF_CONDUCT.md) before posting your first idea as well.
+* Create individual PR for each suggestion.ell.
 
 ### Creating A Pull Request
 
